@@ -1,0 +1,27 @@
+name: Quality checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Unit tests
+        run: npm test
+      - name: Syntax checks
+        run: npm run check
+      - name: Production build
+        run: npm run build
