@@ -1,0 +1,17 @@
+{
+  "name": "dream-dex-creature-index",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An interactive field guide to 30 original animated fantasy creatures.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/app.js && node --check src/catalog.js && node --check src/core.js && node --check scripts/build.mjs && node --check scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs dist"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
