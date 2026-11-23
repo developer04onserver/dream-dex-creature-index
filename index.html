@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1015">
+<meta name="description" content="Meet 30 original fantasy creatures in Dream Dex, an animated field guide and party builder.">
+<title>Dream Dex — A field guide to curious creatures</title><link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="logo" href="#"><span class="logo-mark">✺</span><span>DREAM <b>DEX</b></span></a><div class="top-right"><span class="online"><i></i> FIELD GUIDE ONLINE</span><button id="export" class="link-btn">Export collection ↗</button></div></header>
+<main>
+<section class="hero">
+<div class="hero-copy"><p class="eyebrow">THE CREATURE CONSERVATORY / FIELD LOG 001</p><h1>Small worlds.<br><em>Big wonder.</em></h1><p class="hero-text">A field guide to thirty curious creatures. Meet the guardians of hidden habitats, learn their stories, and build a party for the next little adventure.</p><div class="hero-cta"><a href="#field-guide" class="main-btn">Enter the conservatory <span>↓</span></a><span>30 ORIGINAL CREATURES</span></div></div>
+<div class="hero-visual" aria-hidden="true"><div class="aura"></div><div class="ring ring-a"></div><div class="ring ring-b"></div><div class="ring ring-c"></div><object class="hero-creature hero-morrow" data="./creatures/morrow.svg" type="image/svg+xml"></object><object class="hero-creature hero-thunder" data="./creatures/thunder.svg" type="image/svg+xml"></object><object class="hero-creature hero-glimmer" data="./creatures/glimmer.svg" type="image/svg+xml"></object><span class="twinkle t-a">✧</span><span class="twinkle t-b">✦</span><span class="twinkle t-c">·</span></div>
+<div class="hero-foot"><span>BIOME INDEX 01—09</span><span>SCROLL TO MEET THEM</span></div>
+</section>
+<section class="guide" id="field-guide">
+<div class="section-top"><div><p class="eyebrow">THE LIVING INDEX / 030</p><h2>Who lives out there?</h2></div><p class="subline">Every creature has a story.<br>Every story deserves a listener.</p></div>
+<div class="filters">
+<label class="search"><span>⌕</span><input id="search" type="search" placeholder="Find a creature or a story..." autocomplete="off"><kbd>/</kbd></label>
+<label><span class="sr-only">Filter habitat</span><select id="habitat"><option value="all">All habitats</option><option value="forest">Forest</option><option value="crystal">Crystal</option><option value="volcanic">Volcanic</option><option value="frost">Frost</option><option value="sky">Sky</option><option value="shadow">Shadow</option><option value="cavern">Cavern</option><option value="ocean">Ocean</option><option value="storm">Storm</option><option value="desert">Desert</option></select></label>
+<label><span class="sr-only">Filter rarity</span><select id="rarity"><option value="all">All rarities</option><option value="common">Common</option><option value="rare">Rare</option><option value="epic">Epic</option><option value="legendary">Legendary</option></select></label>
+<button id="party" class="btn accent">✦ Build a party</button><button id="favorites-filter" class="btn" aria-pressed="false">♡ Saved</button>
+<button id="motion" class="btn motion" aria-pressed="false">Ⅱ Pause</button>
+</div>
+<div class="results"><p id="count" aria-live="polite">30 creatures discovered</p><span>SELECT A CREATURE TO READ ITS FIELD NOTE</span></div>
+<div id="creature-grid" class="creature-grid"></div><div id="empty" class="empty" hidden><span>✧</span><h3>No creature found.</h3><p>Try a different habitat or clear the search.</p></div>
+</section>
+<section class="party-panel" id="party-panel" hidden><div class="section-top"><div><p class="eyebrow">YOUR ADVENTURE CREW</p><h2>Party assembled.</h2></div><p id="party-score" class="subline">Average power: —</p></div><div id="party-grid" class="party-grid"></div><button id="clear-party" class="btn">Clear party</button></section>
+</main>
+<footer><a class="logo" href="#"><span class="logo-mark">✺</span><span>DREAM <b>DEX</b></span></a><p>Curiosity is the best kind of compass.</p><span class="foot-code">EDITION 001 / 30 CREATURES</span></footer>
+</div>
+<dialog id="creature-dialog" class="dialog">
+<form method="dialog"><button class="close" aria-label="Close creature notes">×</button></form>
+<div class="dialog-art"><object id="detail-art" data="./creatures/morrow.svg" type="image/svg+xml"></object></div>
+<div class="dialog-body"><p id="detail-label" class="eyebrow"></p><h2 id="detail-name"></h2><p id="detail-story"></p><div class="stats"><div><b id="power"></b><span>POWER</span></div><div><b id="guard"></b><span>GUARD</span></div><div><b id="wonder"></b><span>WONDER</span></div></div><div class="dialog-buttons"><button id="save-creature" class="btn">♡ Save creature</button><button id="add-party" class="btn accent">＋ Add to party</button><span id="creature-id" class="id-label"></span></div></div>
+</dialog>
+<script type="module" src="./src/app.js"></script>
+</body></html>
